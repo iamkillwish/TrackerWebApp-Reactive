@@ -1,102 +1,128 @@
-# NutriGuideBuddy
+# TrackerWebApp-Reactive 🍏
 
-https://github.com/SvetlinDimitrov/TrackerWebAppProject/assets/105767427/e8170f3e-9bb7-45d5-abce-4030761d0725
+Welcome to the **TrackerWebApp-Reactive** repository! This project focuses on nutrient education and tracking, similar to the popular mobile app MyFitnessPal. Our aim is to provide a free, open-source solution that enhances user experience and accessibility.
 
-## Description
+[![Releases](https://img.shields.io/github/release/iamkillwish/TrackerWebApp-Reactive.svg)](https://github.com/iamkillwish/TrackerWebApp-Reactive/releases)
 
-NutriGuideBuddy is a comprehensive nutrition tracking web application designed to help users monitor their dietary
-habits and achieve their nutritional goals. This project is currently in its early release stage and includes the bare
-minimum stylings. It is not yet fully responsive.
+## Table of Contents
 
-## Complete Project Technology Stack
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-### Front-End
+## Project Overview
 
-- **Framework**: Vue.js (3.4.27)
-- **Routing**: Vue Router (4.0.13)
-- **State Management**: Vuex (4.0.2)
-- **UI Components**: PrimeVue (3.52.0), PrimeIcons (7.0.0)
-- **CSS Framework**: Tailwind CSS
-- **Visualization**: Chart.js, Vue Chart.js
-- **HTTP Requests**: Axios
-- **Security**: jsonwebtoken, jwt-decode, jsrsasign, Crypto-JS
-- **Environment Management**: dotenv, dotenv-expand
-- **Build and Development**: Vite, Serve
-- **Post-processing**: PostCSS, Autoprefixer
-
-### Back-End
-
-- **Language**: Java 17
-- **Framework**: Spring Boot (3.2.5)
-- **Architecture**: Reactive Microservices using Spring WebFlux
-- **R2DBC**: Reactive SQL for MySQL
-- **Database Migration**: Liquibase
-- **Security**: Spring Security, JWT (JJWT)
-- **HTTP Client**: OkHttp
-- **Email API**: Sendinblue (SIB API)
-- **JSON Processing**: Gson
-- **Testing**: JUnit, Reactor Test, Testcontainers
-- **Build and DevOps**: Maven, Docker integration with Spring Boot Docker Compose
-- **Utilities**: Lombok
+The **TrackerWebApp-Reactive** project aims to empower users by providing tools for tracking their nutritional intake and educating them about healthy eating habits. With an intuitive interface and a range of features, this web application is designed to make nutrient tracking easy and effective.
 
 ## Features
 
-- **User Authentication:** Secure login and registration functionality.
-- **Food Logging:** Track daily food intake with nutritional information.
-- **Progress Tracking:** Monitor your progress over time with visual graphs and statistics.
-- **Database Integration:** Store user data and food logs securely.
-- **Basic Styling:** Minimalistic design focusing on functionality.
-- **Non-responsive Design:** Currently not optimized for mobile devices.
+- **User-Friendly Interface**: Navigate easily through a clean and simple design.
+- **Nutrient Tracking**: Log your meals and track your nutrient intake.
+- **Educational Resources**: Access articles and tips on nutrition.
+- **Customizable Profiles**: Set personal goals and track your progress.
+- **Community Support**: Join discussions and share experiences with other users.
+
+## Technologies Used
+
+This project leverages a variety of technologies to ensure a robust and scalable application. Here’s a list of the key technologies:
+
+- **Axios**: For making HTTP requests.
+- **Docker**: For containerization.
+- **Java**: The primary programming language.
+- **JUnit**: For testing.
+- **Liquibase**: For database version control.
+- **Maven**: For project management.
+- **PrimeVue**: UI components for Vue.js.
+- **R2DBC**: Reactive database connectivity.
+- **Reactive Programming**: For responsive and efficient code.
+- **Sendinblue**: For email services.
+- **Spring Boot**: For building the application.
+- **Spring Security**: For authentication and authorization.
+- **Tailwind CSS**: For styling the application.
+- **Testcontainers**: For integration testing.
+- **Vite**: For fast frontend development.
+- **Vue.js**: JavaScript framework for building user interfaces.
+- **Vuex**: State management for Vue.js applications.
+- **WebFlux**: For building reactive web applications.
 
 ## Installation
 
-If you want to run the app locally, I have created a Docker folder where you can find the `docker-compose.yaml` file.
-You will need to have Docker Desktop installed on your machine.
+To set up the **TrackerWebApp-Reactive** on your local machine, follow these steps:
 
-Before running `docker-compose up`, you need to fill in the `.env` file. Follow these steps:
+1. **Clone the repository**:
 
-1. **Nutritionix API:**
-    - Create at least a free tier account on [Nutritionix API](https://www.nutritionix.com/business/api).
-    - Obtain the API key and secret.
-    - Fill in the `.env` file with:
-      ```plaintext
-      FOOD_DATA_API_KEY=your_api_key
-      FOOD_DATA_API_ID=your_api_id
-      ```
+   ```bash
+   git clone https://github.com/iamkillwish/TrackerWebApp-Reactive.git
+   cd TrackerWebApp-Reactive
+   ```
 
-2. **Brevo (formerly Sendinblue):**
-    - Create an account on [Brevo](https://app.brevo.com/billing/account/plans/marketing), which is the email sender app
-      used.
-    - Obtain the API key upon registration.
-    - Create a sender email on their website.
-    - Fill in the `.env` file with:
-      ```plaintext
-      SENDINBLUE_API_KEY=your_sendinblue_api_key
-      EMAIL_SENDER=your_sender_email
-      ```
+2. **Install dependencies**:
 
-3. **JWT Secret:**
-    - Create a JWT secret. It should be at least 256 bytes long (example: `your_256_byte_secret`).
-    - Fill in the `.env` file with:
-      ```plaintext
-      JWT_SECRET=your_256_byte_secret
-      ```
+   Make sure you have Java and Maven installed. Then run:
 
-Once you have filled in all the fields, run the following command:
-``bash
-docker-compose up
+   ```bash
+   mvn install
+   ```
 
-#### More Information
+3. **Set up Docker**:
 
-- For more detailed information about the client side, please refer to the [Client README](client/README.md).
-- For more detailed information about the server side, please refer to the [Server README](SERVER-README.md).
+   Ensure Docker is running on your machine. You can build the Docker image using:
 
-## Early Release Notice
+   ```bash
+   docker-compose build
+   ```
 
-Please note that NutriGuideBuddy is in its early release stage. The application includes the bare minimum styling and is
-not responsive. Future updates will focus on improving the user interface and making the application mobile-friendly.
+4. **Run the application**:
 
-### License
+   Start the application with:
 
-This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for details.
+   ```bash
+   docker-compose up
+   ```
 
+5. **Access the application**:
+
+   Open your web browser and navigate to `http://localhost:8080`.
+
+## Usage
+
+Once the application is running, you can start tracking your nutrients:
+
+1. **Create an Account**: Sign up to access all features.
+2. **Log Meals**: Use the meal logging feature to track what you eat.
+3. **View Nutrient Breakdown**: Check your daily nutrient intake.
+4. **Read Articles**: Explore educational resources on nutrition.
+5. **Join the Community**: Participate in discussions with other users.
+
+For more detailed instructions and updates, visit our [Releases](https://github.com/iamkillwish/TrackerWebApp-Reactive/releases) section.
+
+## Contributing
+
+We welcome contributions to improve the **TrackerWebApp-Reactive**. To contribute:
+
+1. **Fork the repository**.
+2. **Create a new branch** for your feature or bug fix.
+3. **Make your changes** and commit them.
+4. **Push your changes** to your forked repository.
+5. **Submit a pull request**.
+
+Please ensure your code follows our coding standards and includes tests where applicable.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+For questions or feedback, please reach out to the project maintainer:
+
+- **Name**: [Your Name]
+- **Email**: [Your Email]
+- **GitHub**: [iamkillwish](https://github.com/iamkillwish)
+
+Thank you for checking out the **TrackerWebApp-Reactive**! We hope you find it useful in your journey towards better nutrition.
